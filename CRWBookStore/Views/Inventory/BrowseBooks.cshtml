@@ -1,0 +1,91 @@
+﻿@using CRWBookStore.Infrastructure
+@model IEnumerable<CRWBookStore.Models.BookModel>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Books</h1>
+
+<div>
+    <h4> Welcome to our book list. Select books you like!</h4>
+    <hr />
+    @foreach (var item in Model)
+    {
+        <div class="bookPicture" style="display:inline-block;float:left; margin-top:10px;padding-top: 35px;" >
+        <img src="@Html.DisplayFor(model => item.picture)" style="width:160px" >            
+        </div>
+       <div style="display:inline;margin-left:100px;">
+        <dl class="row" style="padding-left: 50px;">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Book_id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Book_id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Publisher_id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Publisher_id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Num_pages)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Num_pages)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Language_id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Language_id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.isbn13)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.isbn13)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Publication_date)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Publication_date)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.price)
+            </dd>
+   
+
+           <form id="@item.Book_id" asp-page="/Cart" method="post">
+             <input type="hidden" asp-for="@item.Book_id" />
+             <input type="hidden" name="productId" value="@item.Book_id"/>
+             <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+             <span class="card-text p-1">
+             <button type="submit"
+             class="btn btn-success btn-sm pull-right" style="float:right">
+             <img style="height: 25px;padding-right: 3px;padding-bottom: 3px;" src="~/shopping-cart-icon.svg" />
+             Add To Cart
+             </button>
+             </span>
+           </form>
+
+    
+        </dl>
+       </div>
+        <hr />
+   }
+</div>
+<div>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="BrowseBooks">Back to Top</a>
+</div>

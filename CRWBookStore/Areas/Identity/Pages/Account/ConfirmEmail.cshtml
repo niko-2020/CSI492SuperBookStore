@@ -1,0 +1,15 @@
+﻿@page
+
+@inject SignInManager<CRWBookStoreUser> SignInManager
+@inject UserManager<CRWBookStoreUser> UserManager
+
+
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Confirm email";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Dear Customer，</h4>
+<h5>Thank you for register</h5>

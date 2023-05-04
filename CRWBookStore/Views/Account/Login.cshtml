@@ -1,0 +1,49 @@
+﻿@model CRWBookStore.Models.CustomerModel
+
+@{
+    ViewData["Title"] = "Login-Admin";
+}
+
+<h1 style =" margin:auto; width:60%; padding:15px;">Welcome to Login as Adminstrator</h1>
+
+
+<hr />
+<div class = "container-login" style="text-align:center">
+<div class="row">
+    <div class="col-md-4" style =" margin:auto; width:60%; border:3px solid #E4E2E2; padding:15px;">
+        <form method="post" action="/Account/Login">
+            <label>Enter Username</label><br/>
+            <input type="text" name="username"/><br/>
+
+            <label>Enter Password</label><br/>
+            <input type="password" name="password"/><br/>
+
+            <input type="submit" value="Login"/>
+        </form>
+        @*<form asp-action="Login">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Enter Username</label>
+                <input asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>*@
+    </div>
+</div>
+<hr>
+<div>
+    <a asp-action="Index">Create Account</a>
+</div>
+</div>
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+*@

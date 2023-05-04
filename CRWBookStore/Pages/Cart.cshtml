@@ -1,0 +1,70 @@
+﻿@page
+@using CRWBookStore.Models
+@using CRWBookStore.Pages
+@model CartModel
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] CRW BOOK STORE</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="favicon.ico"/>
+
+</head>
+
+
+<h5>Your Shopping Cart</h5>
+<table class="table table-bordered table-striped">
+     <thead>
+         <tr>
+             <th>Quantity</th>
+             <th>Item</th>
+             <th class="text-right">Price</th>
+             <th class="text-right">Subtotal</th>
+         </tr>
+     </thead>
+     <tbody>
+         @foreach (var line in Model.Cart.Lines) {
+         <tr>
+             <td class="text-center">@line.Quantity</td>
+             <td class="text-left">@line.book.Title</td>
+            <td class="text-right">@line.book.price.ToString("c")</td>
+             <td class="text-right">
+             @((line.Quantity *line.book.price).ToString("c"))
+             </td>
+             <td class="text-center">
+                    <form asp-page-handler="Remove" method="post">
+                        <input type="hidden" name="productId"
+                               value="@line.book.Book_id" />
+                        <input type="hidden" name="returnUrl"
+                               value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+        </tr>
+         }
+     </tbody>
+     <tfoot>
+     <tr>
+     <td colspan="3" class="text-right">Total:</td>
+
+     <td class="text-right">
+         @Model.Cart.ComputeTotalValue().ToString("c")
+     </td>
+
+     </tr>
+     </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue shopping</a>
+    <a class="btn btn-primary" asp-action="PaymentInfo" asp-controller="Order">
+        Checkout
+    </a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

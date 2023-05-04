@@ -1,0 +1,30 @@
+﻿@model Order
+
+<h2>Check out now</h2>
+<p>Please enter your Payment Information</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+    <h3>Payment Information</h3>
+    <div class="form-group">
+        <label>First Name:</label><input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label><input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Card Number</label><input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Expiration Month</label><input asp-for="City" class="form-control" />
+        <label>Expiration Date</label><input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Zip:</label><input asp-for="Zip" class="form-control" />
+    </div>
+   <div class="text-center">
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">
+        Continue to Shipping
+    </a>
+</div>
+
