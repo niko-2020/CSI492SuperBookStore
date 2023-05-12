@@ -11,6 +11,7 @@ namespace CRWBookStore.Models
             context = ctx;
         }
         public IQueryable<BookModel> Books => context.Book;
+        public IQueryable<PDFModel> PDFs => context.PDFs;
     }
 
 }
