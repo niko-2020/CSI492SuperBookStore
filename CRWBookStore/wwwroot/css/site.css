@@ -19,15 +19,18 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #2d6ef3;
   background-color: #1b6ec2;
   border-color: #1861ac;
+  
 }
-
+nav-link.table-hover{
+    color:black
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {

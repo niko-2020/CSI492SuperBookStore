@@ -9,11 +9,10 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <!--Slider-->
-    <div class="banner">
-
+    <div>
+        <img src="https://th.bing.com/th/id/R.fdf78ae25307cc1d9d4763cda2d72c6c?rik=Tbqs307SStNzoQ&riu=http%3a%2f%2fwww.thejainbrothers.com%2fwp-content%2fuploads%2f2017%2f03%2fbooks-library-banner.jpg&ehk=zFLrR82cOpPdFQkf4CA8WJt4HlEVxR6OSskCri3FZQA%3d&risl=&pid=ImgRaw&r=0" width="1240" height="340">
     </div>
-    <!--//Slider-->
+    
     <!-- contact -->
     <section class="contact">
         <div class="container">
@@ -21,18 +20,19 @@
             <div class="contact-grids">
                 <div class="col-md-6 contact-form">
 
-                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Category Name" required></asp:TextBox>
+                    <input name="ctl00$ContentPlaceHolder1$TextBox1" type="text" id="ContentPlaceHolder1_TextBox1" placeholder="Category Name" required="">
                     <label>Image</label>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1" id="ContentPlaceHolder1_FileUpload1">
 
                     <div class="submit1">
-                        <asp:Button ID="Button1" runat="server" Text="Add" onclick="Button1_Click" />
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="Add" id="ContentPlaceHolder1_Button1">
                     </div>
-                    <label><asp:Label ID="Label1" runat="server"></asp:Label></label>
+                    <label><span id="ContentPlaceHolder1_Label1"></span></label>
                 </div>
 
                 <div class="clearfix"></div>
             </div>
+            
         </div>
     </section>
 
