@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SuperBookStore.Models;
+//using SuperBookStore.Models;
 
 namespace CRWBookStore.Data
 {
@@ -19,7 +19,6 @@ namespace CRWBookStore.Data
         public DbSet<BookModel> Book { get; set; }
         public DbSet<CustomerModel> customers { get; set; }
         //public DbSet<PriceModel> Price { get; set; }
-        public DbSet<PDFModel> PDFs { get; set; }
 
     }
 }
