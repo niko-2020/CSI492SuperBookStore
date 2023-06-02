@@ -14,6 +14,7 @@ namespace CRWBookStore.Data
         
         }
 
+        public DbSet<PDFModel> PDFs { get; set; }
         public DbSet<BookModel> Book { get; set; }
         public DbSet<CustomerModel> customers { get; set; }
         //public DbSet<PriceModel> Price { get; set; }
