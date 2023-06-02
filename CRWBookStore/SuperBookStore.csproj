@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bluetopo.Util.WebControl" Version="2.0.17.1102" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.21" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.21" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
@@ -17,7 +16,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Graph" Version="4.29.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
-    <PackageReference Include="ShiQuan.WebControl" Version="1.0.2019.11291" />
   </ItemGroup>
 
   <ItemGroup>
