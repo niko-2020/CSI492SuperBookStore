@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using CRWBookStore.Data;
 using CRWBookStore.Models;
 using System;
@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 
 namespace CRWBookStore.Controllers
 {
+    //[ApiController]
     public class PDFController : Controller
     {
         private readonly DataContext _db;
+
 
         public PDFController(DataContext db)
         {
             _db = db;
         }
+
         public IActionResult BrowsePDF()
         {
             var displayData = _db.PDFs.ToList();
