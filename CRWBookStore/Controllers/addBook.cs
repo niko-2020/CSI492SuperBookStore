@@ -1,29 +1,33 @@
-using Microsoft.AspNetCore.Mvc;
-using CRWBookStore.Data;
-using CRWBookStore.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
+
+using CRWBookStore.Data;
+using CRWBookStore.Models;
 
 
-namespace CRWBookStore.Controllers
+namespace SuperBookStore.Controllers
 {
-    //[ApiController]
-    public class PDFController : Controller
+    public class addBook : Controller
     {
+        public IActionResult Addbook()
+        {
+            return View("addBook");
+        }
+
         private readonly DataContext _db;
 
-
-        public PDFController(DataContext db)
+        public addBook(DataContext db)
         {
             _db = db;
         }
-
-        public IActionResult BrowsePDF()
+        public IActionResult BrowseBooks()
         {
-            var displayData = _db.PDFs.ToList();
-            return View("BrowsePDF", displayData);
+            var displayData = _db.Book.ToList();
+            return View("BrowseBooks", displayData);
         }
         public IActionResult Login()
         {
@@ -36,7 +40,6 @@ namespace CRWBookStore.Controllers
         }
         [HttpPost]
 
-
         public async Task<IActionResult> Login(int Customer_id)
         {
             if (ModelState.IsValid)
@@ -47,7 +50,6 @@ namespace CRWBookStore.Controllers
             }
             return View(Customer_id);
         }
-
 
 
     }
