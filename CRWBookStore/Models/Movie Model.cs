@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CRWBookStore.Models
 {
-    public class PDFModel
+    public class MovieModel
     {
         [Key]
         public int ID { get; set; }
-        public string pdf_name { get; set; }
+        public string movie_name { get; set; }
         public string link { get; set; }
-        public string pdf_picture { get; set; }
+        public string movie_picture { get; set; }
         /*
         public int Book_id { get; set; }
         public string Title { get; set; }

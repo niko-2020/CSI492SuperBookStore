@@ -1,14 +1,14 @@
 ﻿@using CRWBookStore.Infrastructure
-@model IEnumerable<CRWBookStore.Models.PDFModel>
+@model IEnumerable<CRWBookStore.Models.MovieModel>
 
 @{
-    ViewData["Title"] = "PDFs";
+    ViewData["Title"] = "Movies";
 }
 
 <h1>Books</h1>
 
 <div>
-    <h4> Welcome to our free PDF list. Download as many books as you like!</h4>
+    <h4> Welcome to our Movie catalog! A download will be avaliable upon purchase!</h4>
     <hr />
     @foreach (var item in Model)
     {
@@ -21,13 +21,13 @@
                     @Html.DisplayNameFor(model => item.ID)
                 </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(model => item.pdf_name)
+                    @Html.DisplayFor(model => item.movie_name)
                 </dd>
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => item.link)
                 </dt>
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => item.pdf_picture)
+                    @Html.DisplayNameFor(model => item.movie_picture)
                 </dt>
 
 
@@ -55,5 +55,6 @@
     }
 </div>
 <div>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="BrowsePDF">Back to Top</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="BrowseMovie">Back to Top</a>
 </div>
+

@@ -12,6 +12,7 @@ namespace CRWBookStore.Models
         }
         public IQueryable<BookModel> Books => context.Book;
         public IQueryable<PDFModel> PDFs => context.PDFs;
+        public IQueryable<MovieModel> Movie => context.Movie;
     }
 
 }
