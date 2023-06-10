@@ -1,11 +1,11 @@
-﻿@using CRWBookStore.Infrastructure
+@using CRWBookStore.Infrastructure
 @model IEnumerable<CRWBookStore.Models.PDFModel>
 
 @{
     ViewData["Title"] = "PDFs";
 }
 
-<h1>Books</h1>
+<h1>PDFs</h1>
 
 <div>
     <h4> Welcome to our free PDF list. Download as many books as you like!</h4>
@@ -31,10 +31,6 @@
                 </dt>
 
 
-
-
-
-
                 <form id="@item.ID" asp-page="/Cart" method="post">
                     <input type="hidden" asp-for="@item.ID" />
                     <input type="hidden" name="productId" value="@item.ID" />
@@ -57,3 +53,4 @@
 <div>
     <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="BrowsePDF">Back to Top</a>
 </div>
+
