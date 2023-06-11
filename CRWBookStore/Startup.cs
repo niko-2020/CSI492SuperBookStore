@@ -1,4 +1,4 @@
-using CRWBookStore.Data;
+﻿using CRWBookStore.Data;
 using CRWBookStore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SuperBookStore.Data;
 
 namespace CRWBookStore
 {
@@ -39,6 +40,9 @@ namespace CRWBookStore
             //AddControllers(); and AddMvc(option => option.EnableEndpointRouting = false); is for attribute routing
             services.AddControllers();
             services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            services.AddDbContext<SuperBookStoreContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SuperBookStoreContext")));
         }
     
 

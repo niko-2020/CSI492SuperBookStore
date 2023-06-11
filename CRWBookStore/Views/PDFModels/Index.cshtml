@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CRWBookStore.Models.PDFModel>
+
+
+@{
+    ViewData["Title"] = "PDF";
+}
+
+<h1>PDFs List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tbody>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pdf_picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdf_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.link)
+            </th>
+            <th>Update</th>
+        </tr>
+    
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(model => item.pdf_picture)" style="width:160px">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdf_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.link)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

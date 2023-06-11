@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CRWBookStore.Models.BookModel>
+
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h3 class="title-txt"><span>B</span>ook <span>L</span>ist</h3>
+
+<p>
+    <a asp-action="Create">Add Book</a>
+</p>
+<table cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView1" style="width:100%; border-collapse:collapse;">
+
+    <tbody>
+        <tr class="table-header">
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.picture)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.isbn13)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+
+            <th>Update</th>
+        </tr>
+    
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            <img src="@Html.DisplayFor(model => item.picture)" style="width:160px">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isbn13)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Book_id">Edit</a>   <br />
+            <a asp-action="Details" asp-route-id="@item.Book_id">Details</a> <br />
+            <a asp-action="Delete" asp-route-id="@item.Book_id">Delete</a>
+        </td>
+    </tr>
+        }
+    </tbody>
+</table>
