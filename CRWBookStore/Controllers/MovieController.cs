@@ -17,7 +17,7 @@ namespace CRWBookStore.Controllers
         {
             _db = db;
         }
-        public IActionResult BrowsePDF()
+        public IActionResult BrowseMovie()
         {
             var displayData = _db.Movie.ToList();
             return View("BrowseMovie", displayData);

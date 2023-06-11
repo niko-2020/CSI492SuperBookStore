@@ -26,9 +26,7 @@
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => item.link)
                 </dt>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => item.pdf_picture)
-                </dt>
+                
 
 
                 <form id="@item.ID" asp-page="/Cart" method="post">
@@ -51,6 +49,6 @@
     }
 </div>
 <div>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="BrowsePDF">Back to Top</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="PDF" asp-action="BrowsePDF">Back to Top</a>
 </div>
 
