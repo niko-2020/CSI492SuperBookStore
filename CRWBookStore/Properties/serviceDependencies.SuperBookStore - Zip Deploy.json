@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/superbookstore-server/databases/superbookstore-database",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:IdentityUserDataContextConnection",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql3": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/superbookstore-server/databases/superbookstore-database",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:SuperBookStoreContext",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/superbookstore-server/databases/superbookstore-database",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

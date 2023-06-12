@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "mssql2": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:DefaultConnection"
-    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:IdentityUserDataContextConnection"
@@ -11,6 +7,10 @@
     "mssql3": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:SuperBookStoreContext"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }
