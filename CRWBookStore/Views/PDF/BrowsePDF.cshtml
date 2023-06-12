@@ -17,16 +17,19 @@
         </div>
         <div style="display:inline;margin-left:100px;">
             <dl class="row" style="padding-left: 50px;">
+
+
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => item.ID)
+                    <img src="@item.pdf_picture" width="108" height="192">
                 </dt>
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => item.pdf_name)
                 </dd>
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => item.link)
+
                 </dt>
-                
+
+
 
 
                 <form id="@item.ID" asp-page="/Cart" method="post">
