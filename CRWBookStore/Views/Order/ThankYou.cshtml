@@ -1,13 +1,18 @@
-﻿@model OrderModel
+﻿@model Order
 @{ ViewData["Title"] = "Thanks"; }
 
 
 <div class="text-center">
     <h1 class="display-4">Thank you for your order!</h1>
-    <div>@Model.OrderID</div>
+    <br />
+    <h2>We will shipping your those book in 7 days</h2>
+    <br />
+    <div>Your Order ID: ORDER @Model.OrderID</div>
+    <br />
     @foreach (var item in Model.Lines)
     {
-        <div>@item.book.Book_id</div>
+        <div><img src="@Html.DisplayFor(model => item.book.picture)" style="width:90px"> </div>
+        <br />
         <div>@item.book.Title</div>
     }
 </div>
