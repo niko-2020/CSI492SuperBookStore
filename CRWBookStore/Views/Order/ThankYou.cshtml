@@ -1,0 +1,13 @@
+﻿@model OrderModel
+@{ ViewData["Title"] = "Thanks"; }
+
+
+<div class="text-center">
+    <h1 class="display-4">Thank you for your order!</h1>
+    <div>@Model.OrderID</div>
+    @foreach (var item in Model.Lines)
+    {
+        <div>@item.book.Book_id</div>
+        <div>@item.book.Title</div>
+    }
+</div>

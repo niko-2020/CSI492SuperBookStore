@@ -15,6 +15,12 @@ namespace CRWBookStore.Controllers
         }
 
         [HttpGet]
+        public ViewResult ShowOrder(Order order)
+        {
+            return View("ThankYou");
+        }
+
+        [HttpGet]
         public ViewResult Checkout()
         {
             return View(new Order());
@@ -30,8 +36,9 @@ namespace CRWBookStore.Controllers
             if (ModelState.IsValid)
             {
                 order.Lines = cart.Lines.ToArray();
+                // insert to database
                 cart.Clear();
-                return RedirectToPage("/ThankYou", new { orderId = order.OrderID });
+                return View("ThankYou", order);
             }
             else
             {
