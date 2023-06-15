@@ -1,12 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CRWBookStore.Models;
 using System.Linq;
+using CRWBookStore.Data;
+using System.Threading.Tasks;
+using SuperBookStore.Models;
+using SuperBookStore.Data;
+
 namespace CRWBookStore.Controllers
 {
     public class OrderController : Controller
     {
         private IOrderRepository repository;
         private Cart cart;
+        private SuperBookStoreContext _db;
+
 
         public OrderController(IOrderRepository repoService, Cart cartService)
         {
@@ -27,7 +34,7 @@ namespace CRWBookStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Checkout(Order order)
+        public IActionResult Checkout(Order order,OrderModel od )
         {
             if (cart.Lines.Count() == 0)
             {
@@ -36,9 +43,16 @@ namespace CRWBookStore.Controllers
             if (ModelState.IsValid)
             {
                 order.Lines = cart.Lines.ToArray();
-                // insert to database
-                cart.Clear();
+                /*// insert to database
+                _db.Add(od);
+                //await _db.SaveChanges();
+                OrderModel ord = new OrderModel();
+                od.Id = order.OrderID;               
+                od.delivery_address = order.Line1+order.City+","+order.State+order.Zip;
+                */
+                
                 return View("ThankYou", order);
+                cart.Clear();
             }
             else
             {
